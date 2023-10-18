@@ -109,7 +109,37 @@ const examNotebooks = (studentCount, numberOrder) => {
 
 // Object masalalar.
 
-// Object 1-masala tepadagi birinchi masala bilan bir xil ekan.
+// Object 1
+const ObjectmultipleOfPrime = function(arr) {
+    let multiplication = 1;
+    for (let i = 0; i < arr.length; i++) {
+        let arrayElement = arr[i];
+        let divisorCount = 0;
+        let i2 = 1; 
+        while (arrayElement >= i2) {
+            if (arrayElement % i2 == 0) {
+                divisorCount++;
+            }
+            i2++;
+        }
+        if (divisorCount == 2) {
+            multiplication *= arrayElement;
+        }
+    }
+    let lastDigit = 0;
+    let zeros = 0;
+    while (multiplication >= 1) {
+        lastDigit = multiplication % 10;
+        if (lastDigit == 0) {
+            zeros++;
+        } else {
+            return zeros;
+        }
+        multiplication = multiplication / 10; 
+    }
+    return zeros;
+}
+// console.log(ObjectmultipleOfPrime([2, 3, 5, 7, 43, 47]))
 
 // Object 2
 const EvenNumbersProduct = (N) => {
